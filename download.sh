@@ -1,35 +1,39 @@
 #!/bin/sh
 
-wget https://github.com/pjdelgado/bb/raw/main/airixss.tar.gz
-tar -xvf airixss.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/anew.tar.gz
-tar -xvf anew.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/csprecon.tar.gz
-tar -xvf csprecon.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/dalfox.tar.gz
-tar -xvf dalfox.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/getjs.tar.gz
-tar -xvf getjs.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/gf.tar.gz
-tar -xvf gf.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/golinkfinder.tar.gz
-tar -xvf golinkfinder.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/html-tool.tar.gz
-tar -xvf html-tool.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/katana.tar.gz
-tar -xvf katana.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/kxss.tar.gz
-tar -xvf kxss.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/qsreplace.tar.gz
-tar -xvf qsreplace.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/subover.tar.gz
-tar -xvf subover.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/subzy.tar.gz
-tar -xvf subzy.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/unfurl.tar.gz
-tar -xvf unfurl.tar.gz
-wget https://github.com/pjdelgado/bb/raw/main/waybackurls.tar.gz
-tar -xvf waybackurls.tar.gz
+mkdir go
+cd go
+wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+cd
 
-rm -rf *.tar.gz
-cp * /usr/local/bin
+apt update
+apt install python3 -y
+apt install python3-pip -y
+
+snap install amass
+git clone https://github.com/aboul3la/Sublist3r.git
+cd Sublist3r
+pip install -r requirements.txt
+cd
+
+go install github.com/ferreiraklet/airixss@latest
+go install -v github.com/tomnomnom/anew@latest
+go install github.com/edoardottt/csprecon/cmd/csprecon@latest
+go install github.com/hahwul/dalfox/v2@latest
+go install github.com/003random/getJS@latest
+go install github.com/tomnomnom/gf@latest
+go install github.com/0xsha/GoLinkFinder@latest
+go install github.com/hahwul/dalfox/v2@latest
+go install github.com/tomnomnom/hacks/html-tool@latest
+go install github.com/projectdiscovery/katana/cmd/katana@latest
+go install github.com/Emoe/kxss@latest
+go install github.com/tomnomnom/qsreplace@latest
+go install github.com/Ice3man543/SubOver@latest
+go install -v github.com/lukasikic/subzy@latest
+go install github.com/tomnomnom/unfurl@latest
+go install github.com/tomnomnom/waybackurls@latest
+
+cp /root/go/bin/* /usr/local/bin
