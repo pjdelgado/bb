@@ -30,3 +30,6 @@ wget https://github.com/pjdelgado/bb/raw/main/unfurl.tar.gz
 tar -xvf unfurl.tar.gz
 wget https://github.com/pjdelgado/bb/raw/main/waybackurls.tar.gz
 tar -xvf waybackurls.tar.gz
+
+rm -rf *.tar.gz
+cp * /usr/local/bin
