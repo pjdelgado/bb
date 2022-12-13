@@ -28,9 +28,11 @@ go install github.com/tomnomnom/gf@latest
 go install github.com/0xsha/GoLinkFinder@latest
 go install github.com/hahwul/dalfox/v2@latest
 go install github.com/tomnomnom/hacks/html-tool@latest
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 go install github.com/projectdiscovery/katana/cmd/katana@latest
 go install github.com/Emoe/kxss@latest
 go install github.com/tomnomnom/qsreplace@latest
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install github.com/Ice3man543/SubOver@latest
 go install -v github.com/lukasikic/subzy@latest
 go install github.com/tomnomnom/unfurl@latest
