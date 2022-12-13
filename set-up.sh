@@ -1,6 +1,7 @@
 #!/bin/sh
 
 mkdir go
+mkdir tools
 cd go
 wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz
@@ -14,6 +15,7 @@ apt install python3 -y
 apt install python3-pip -y
 
 snap install amass
+cd tools
 git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r
 pip install -r requirements.txt
