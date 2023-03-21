@@ -8,7 +8,7 @@ tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-cd
+cd ~
 
 apt update
 apt install python3 -y
@@ -19,7 +19,8 @@ cd tools
 git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r
 pip install -r requirements.txt
-cd
+
+cd ~
 
 go install github.com/ferreiraklet/airixss@latest
 go install -v github.com/tomnomnom/anew@latest
